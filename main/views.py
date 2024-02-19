@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .utils import mutliplicate_by_5
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home_page(request):
@@ -11,3 +12,8 @@ def about_page(request):
 def contact_page(request, test):
     context = {'test': test}
     return render(request, 'main/contact_page.html', context=context)
+
+@login_required
+def special_page(request):
+    return render(request, "main/special_page.html")
+

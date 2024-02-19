@@ -3,5 +3,6 @@ from functionalities import views
 
 urlpatterns = [
     path('list/', views.FunctionalitiesListView.as_view(), name="func-list"),
-    path('<int:pk>/', views.FunctionalitiesDetailView.as_view(), name="func-detail")
+    path('<int:pk>/', views.FunctionalitiesDetailView.as_view(), name="func-detail"),
+    path('signup/', views.SignupView.as_view(), name="signup")
 ]
