@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     "livereload",
     "django.contrib.staticfiles",
     "main",
-    "functionalities"
+    "functionalities",
+    'widget_tweaks'
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,7 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+LOGIN_REDIRECT_URL = '/'
+
+AUTH_USER_MODEL = "main.User"
