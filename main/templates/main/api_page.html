@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% load static widget_tweaks %}
+
+{% block content %}
+
+<h1>Obtenir des informations sur les cryptos</h1>
+
+<form action="." method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock content %}   
