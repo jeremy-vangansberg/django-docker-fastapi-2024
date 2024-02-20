@@ -17,3 +17,6 @@ def contact_page(request, test):
 def special_page(request):
     return render(request, "main/special_page.html")
 
+@login_required
+def api_page(request):
+    return render(request, "main/api_page.html")
