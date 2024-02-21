@@ -2,16 +2,20 @@
 
 {% url "special" as url_special %}
 {% url "func-list" as url_func %}
+{% url "api" as url_api %}
 
 <header class='bg-gray-300'>
     <nav class='justify-between max-w-6xl mx-auto items-center px-6 h-16 text-base font-semibold hidden md:flex'>
+        <a href=" {% url "home" %} ">
         <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+        </a>
         <div class='flex lg:gap-x-16 gap-x-6'>
             <a href="{{url_special}}" class=
             "hover:text-blue-300 {% if request.path == url_special %}text-white{% endif %} ">Special</a>
             <a href="{{url_func}}" class=
             "hover:text-blue-300 {% if request.path == url_func %}text-white{% endif %} ">Fonctionnalités</a>
-            <a href="">Lien 3</a>
+            <a href="{{url_api}}" class=
+            "hover:text-blue-300 {% if request.path == url_api %}text-white{% endif %} ">API</a>
         </div>
 
         <div class='flex gap-x-2'>

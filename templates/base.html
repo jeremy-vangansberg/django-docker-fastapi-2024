@@ -10,7 +10,10 @@
 </head>
 <body>
     {% include "includes/header.html" %}
+
+    <div class='max-w-7xl mx-auto my-10'>
     {% block content %}{% endblock content %}
+    </div>
     {% include "includes/footer.html" %}
 
     <script src="{% static "js/script.js" %}"></script>
