@@ -1,0 +1,33 @@
+apiVersion: '2019-12-01'
+location: francecentral
+name: api_django
+properties:
+  containers:
+  - name: web
+    properties:
+      image: monImageConteneur1:latest
+      resources:
+        requests:
+          cpu: 1
+          memoryInGb: 1.5
+      ports:
+        - port: 80
+  - name: conteneur2
+    properties:
+      image: monImageConteneur2:latest
+      resources:
+        requests:
+          cpu: 1
+          memoryInGb: 1.5
+      ports:
+        - port: 80
+  osType: Linux
+  ipAddress:
+    type: Public
+    ports:
+    - protocol: tcp
+      port: 80
+    - protocol: tcp
+      port: 443
+tags: null
+type: Microsoft.ContainerInstance/containerGroups

@@ -10,9 +10,13 @@ services:
     build: 
       context: ./web/
       dockerfile: Dockerfile
+    volumes: 
+      - ./web/main:/app/main/
+
   postgres_db:
     image: postgres 
     restart : always
+    platform : linux/amd64
     env_file:
       - web/.env
     ports:

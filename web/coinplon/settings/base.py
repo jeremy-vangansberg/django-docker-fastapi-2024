@@ -70,6 +70,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "main.context_processor.global_context"
             ],
         },
     },
@@ -113,7 +114,7 @@ if POSTGRES_AVAIL and POSTGRES_RDY :
     }
 
 else :
-    
+
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
@@ -170,3 +171,12 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_REDIRECT_URL = '/'
 
 AUTH_USER_MODEL = "main.User"
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'  # Utilisez littéralement 'apikey' ici
+EMAIL_HOST_PASSWORD = os.getenv('SENDGRID_API_KEY') 
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'adresse_email_valide@votre_domaine.com'
