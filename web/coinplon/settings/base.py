@@ -172,7 +172,6 @@ LOGIN_REDIRECT_URL = '/'
 
 AUTH_USER_MODEL = "main.User"
 
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'  # Utilisez littéralement 'apikey' ici

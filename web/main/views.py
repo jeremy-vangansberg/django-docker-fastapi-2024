@@ -63,9 +63,8 @@ def special_page(request):
 
 
 
-@login_required
 def api_predict_page(request):
-    url = 'http://172.17.0.3:8001/predict'
+    url = os.getenv('URL_API')
 
     headers = {
     'Accepts': 'application/json',

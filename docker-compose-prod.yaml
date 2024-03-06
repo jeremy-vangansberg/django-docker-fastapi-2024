@@ -7,9 +7,7 @@ services:
       - 8001:8001
     env_file:
       - web/.env
-    build: 
-      context: ./web/
-      dockerfile: Dockerfile
+    image: j30v/api_2024
     volumes: 
       - ./web/main:/app/main/
 
@@ -20,9 +18,7 @@ services:
       - 8002:8002
     env_file:
       - web/.env
-    build: 
-      context: ./api/
-      dockerfile: Dockerfile
+    image: j30v/django_2024
     volumes: 
       - ./api/main:/app/main/
 
