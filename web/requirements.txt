@@ -6,3 +6,5 @@ requests<3
 psycopg2-binary<3
 gunicorn
 mailjet_rest
+whitenoise<7
+django-tailwind[reload]

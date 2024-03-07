@@ -39,22 +39,31 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    "livereload",
     "django.contrib.staticfiles",
     "main",
     "functionalities",
-    'widget_tweaks'
+    'widget_tweaks',
+    'tailwind',
+    'theme',
+    'django_browser_reload'
+]
+
+TAILWIND_APP_NAME = 'theme'
+
+INTERNAL_IPS = [
+    "127.0.0.1",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    'livereload.middleware.LiveReloadScript'
+     "django_browser_reload.middleware.BrowserReloadMiddleware"
 ]
 
 ROOT_URLCONF = "coinplon.urls"
@@ -157,11 +166,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
+
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+STATIC_ROOT = os.environ.get("DJANGO_STATIC_ROOT", BASE_DIR / 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
