@@ -9,7 +9,7 @@ properties:
         resources:
           requests:
             cpu: 1
-            memoryInGb: 4
+            memoryInGb: 1
         ports:
           - port: 5432
         environmentVariables:
@@ -29,7 +29,7 @@ properties:
         resources:
           requests:
             cpu: 1
-            memoryInGb: 4
+            memoryInGb: 1.5
         ports:
           - port: 80
         environmentVariables:
@@ -61,7 +61,7 @@ properties:
         resources:
           requests:
             cpu: 1
-            memoryInGb: 4
+            memoryInGb: 1.5
         ports:
           - port: 8002
 
@@ -71,9 +71,9 @@ properties:
     ports:
       - protocol: tcp
         port: 80  # Adapter en fonction des besoins de votre application
-      # - protocol: tcp
-      #   port: 8002  # Adapter en fonction des besoins de votre application
-      # - protocol: tcp
-      #   port: 5432  # Adapter en fonction des besoins de votre application
+      - protocol: tcp
+        port: 8002  # Adapter en fonction des besoins de votre application
+      - protocol: tcp
+        port: 5432  # Adapter en fonction des besoins de votre application
 tags: null
 type: Microsoft.ContainerInstance/containerGroups

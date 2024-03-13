@@ -22,5 +22,7 @@ urlpatterns = [
     path('', include('main.urls')),
     path('funct/', include('functionalities.urls')),
     path("accounts/", include("django.contrib.auth.urls")),
-    path("__reload__/", include("django_browser_reload.urls"))
+    path("__reload__/", include("django_browser_reload.urls")),
 ]
+
+handler404 = 'main.views.error_404_view'

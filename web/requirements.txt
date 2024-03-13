@@ -4,7 +4,7 @@ django-livereload-server<1
 django-widget-tweaks<2
 requests<3
 psycopg2-binary<3
-gunicorn
+gunicorn<22
 mailjet_rest
 whitenoise<7
 django-tailwind[reload]

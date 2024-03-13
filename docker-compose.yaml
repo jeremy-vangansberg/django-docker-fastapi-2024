@@ -4,14 +4,14 @@ services:
     depends_on:
       - postgresdb
     ports:
-      - 8001:8001
+      - 8001:80
     env_file:
       - web/.env
     build: 
       context: ./web/
       dockerfile: Dockerfile
     volumes: 
-      - ./web/main:/app/main/
+      - ./web/:/app/
 
   api:
     depends_on:

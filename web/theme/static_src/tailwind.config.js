@@ -42,7 +42,11 @@ module.exports = {
         // '../../**/*.py'
     ],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                ResedaGreen: "hsl(129, 8%, 53%)",
+            }
+        },
     },
     plugins: [
         /**

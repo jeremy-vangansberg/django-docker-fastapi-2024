@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import CryptoApiForm, ModelApiForm
 from requests import Request, Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
+from django.http import HttpResponse
 import json
 import os
 
@@ -64,6 +65,7 @@ def special_page(request):
 
 
 def api_predict_page(request):
+    
     url = os.getenv('URL_API')
 
     headers = {
@@ -94,3 +96,9 @@ def api_predict_page(request):
 
     
     return render(request, "main/api_predict_page.html", context={'form':form})
+
+
+
+
+def error_404_view(request, exception=None):
+    return HttpResponse("Error handler content", status=404)
